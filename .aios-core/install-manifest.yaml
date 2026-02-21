@@ -8,7 +8,7 @@
 # - File types for categorization
 #
 version: 4.2.13
-generated_at: "2026-02-21T16:22:37.876Z"
+generated_at: "2026-02-21T16:33:43.633Z"
 generator: scripts/generate-install-manifest.js
 file_count: 1011
 files:
@@ -1045,7 +1045,7 @@ files:
     type: data
     size: 34251
   - path: data/entity-registry.yaml
-    hash: sha256:ead24393a64eb6d91a64343c5106d63a9b6627e6979b0a68276e6d6d7e025d88
+    hash: sha256:65d72c3157c686f946420a741565d6115cc60de9d9b2052c276b59bc7652b3c2
     type: data
     size: 293038
   - path: data/learned-patterns.yaml
@@ -2781,9 +2781,9 @@ files:
     type: script
     size: 2427
   - path: infrastructure/scripts/ide-sync/utils/antigravity-workflows.js
-    hash: sha256:6ee20f1b83c1d8aa498878bb294a5331e6ec1165b2f2f503844d3f64475cb094
+    hash: sha256:f7420ae3b39e6b2741d10f8f59e58e94a2b9b237ab5db516e4ed11d33849aa3c
     type: script
-    size: 1751
+    size: 1939
   - path: infrastructure/scripts/ide-sync/validator.js
     hash: sha256:356c78125db7f88d14f4e521808e96593d729291c3d7a1c36cb02f78b4aef8fc
     type: script
@@ -3001,9 +3001,9 @@ files:
     type: script
     size: 14900
   - path: infrastructure/scripts/validate-antigravity-integration.js
-    hash: sha256:1a1550a8d20375dae75876eb584b60dbf0bb9ec3b89fbeb96ae0a42cd242ed17
+    hash: sha256:5f717462d1ec8fb513261658d1f36c8d7b12c8393b0b4f42847578b0c81ebff8
     type: script
-    size: 2641
+    size: 2804
   - path: infrastructure/scripts/validate-claude-integration.js
     hash: sha256:d7b71db77de1d5d6dc9f6c31cd756279fec85e5fa5257d5077ff5ea09575c118
     type: script

@@ -13,6 +13,8 @@ Guide for integrating AIOS with supported IDEs and AI development platforms.
 
 ## Compatibility Contract (AIOS 4.0.4)
 
+*Note: The compatibility contract file version (4.0.4) is intentionally different from the document release version (4.2.11) as the contract file is only bumped when the matrix schema itself changes.*
+
 The IDE matrix is enforced by a versioned contract:
 
 - Contract file: `.aios-core/infrastructure/contracts/compatibility/aios-4.0.4.yaml`

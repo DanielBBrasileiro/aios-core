@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  lastUpdated: '2026-02-21T15:08:55.152Z'
+  lastUpdated: '2026-02-21T16:22:43.454Z'
   entityCount: 511
   checksumAlgorithm: sha256
 entities:
@@ -4819,8 +4819,8 @@ entities:
         score: 0.5
         constraints: []
         extensionPoints: []
-      checksum: sha256:f1de439aad27a2c83ae5002640c4ea0ab60131546202d263e303d6cdb3993275
-      lastVerified: '2026-02-21T15:08:55.151Z'
+      checksum: sha256:c064e3a7369e1b46528e95f864195f2e7bf8daf338ef54b32699d5379b847bab
+      lastVerified: '2026-02-21T16:22:43.453Z'
     aios-qa-review:
       path: .aios-core/product/templates/ide-rules/antigravity/workflows/aios-qa-review.md
       type: template
@@ -4838,8 +4838,8 @@ entities:
         score: 0.5
         constraints: []
         extensionPoints: []
-      checksum: sha256:fac25ec9fd507c3706f6ee73cd5910757ae071d64594cc8f4fb39670be6d6a15
-      lastVerified: '2026-02-21T15:08:55.152Z'
+      checksum: sha256:dcee4cd7d514bf2d08e6666f626fc7761071fb890f371b6e3373e18f5049a10a
+      lastVerified: '2026-02-21T16:22:43.454Z'
   scripts:
     agent-assignment-resolver:
       path: .aios-core/development/scripts/agent-assignment-resolver.js
