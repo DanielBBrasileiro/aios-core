@@ -8,7 +8,7 @@
 # - File types for categorization
 #
 version: 4.2.13
-generated_at: "2026-02-21T16:33:43.633Z"
+generated_at: "2026-02-21T18:31:54.427Z"
 generator: scripts/generate-install-manifest.js
 file_count: 1011
 files:
@@ -1045,9 +1045,9 @@ files:
     type: data
     size: 34251
   - path: data/entity-registry.yaml
-    hash: sha256:65d72c3157c686f946420a741565d6115cc60de9d9b2052c276b59bc7652b3c2
+    hash: sha256:47036372c277fd126d82f15774db7ca4d90d583897f1390ec391e20dfe20208f
     type: data
-    size: 293038
+    size: 293083
   - path: data/learned-patterns.yaml
     hash: sha256:24ac0b160615583a0ff783d3da8af80b7f94191575d6db2054ec8e10a3f945dc
     type: data
@@ -3529,13 +3529,13 @@ files:
     type: template
     size: 3081
   - path: product/templates/ide-rules/antigravity/workflows/aios-execute-story.md
-    hash: sha256:c064e3a7369e1b46528e95f864195f2e7bf8daf338ef54b32699d5379b847bab
+    hash: sha256:f2c462193d72100efa68499c57bed132ed220e6f3964e0db29f53a7ca9d09871
     type: workflow
-    size: 1503
+    size: 1484
   - path: product/templates/ide-rules/antigravity/workflows/aios-qa-review.md
-    hash: sha256:dcee4cd7d514bf2d08e6666f626fc7761071fb890f371b6e3373e18f5049a10a
+    hash: sha256:ea1bae33fabb6d52be30e1f9d3d17c5afc258000adae57488aa94a187ec27552
     type: workflow
-    size: 1047
+    size: 1039
   - path: product/templates/ide-rules/claude-rules.md
     hash: sha256:13d5fb7858534f6d49150a5dff642faa276c17b9d242f995369c5e7e1d37ae40
     type: template

@@ -4807,12 +4807,14 @@ entities:
       purpose: '[AIOS] Executar uma História de Desenvolvimento (Story) com o Agente Dev'
       keywords:
         - aios
+        - antigravity
         - execute
         - story
         - 'aios:'
         - execution
         - engine
         - workflow
+
       usedBy: []
       dependencies: []
       adaptability:
@@ -4827,6 +4829,7 @@ entities:
       purpose: '[AIOS] Executar revisão de Qualidade (QA) em uma Story recém-finalizada'
       keywords:
         - aios
+        - antigravity
         - qa
         - review
         - 'aios:'
