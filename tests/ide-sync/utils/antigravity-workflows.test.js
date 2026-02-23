@@ -1,0 +1,85 @@
+'use strict';
+
+const fs = require('fs-extra');
+const os = require('os');
+const path = require('path');
+const { syncAntigravityWorkflows } = require('../../../.aios-core/infrastructure/scripts/ide-sync/utils/antigravity-workflows');
+
+describe('antigravity-workflows', () => {
+    let tmpRoot;
+
+    beforeEach(async () => {
+        tmpRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'ide-sync-antigravity-'));
+
+        // Create source template dir
+        const sourceDir = path.join(tmpRoot, '.aios-core', 'product', 'templates', 'ide-rules', 'antigravity', 'workflows');
+        await fs.ensureDir(sourceDir);
+
+        // Create a mock template
+        await fs.writeFile(path.join(sourceDir, 'aios-mock-story.md'), '# Mock Template', 'utf8');
+        // Also add a non-markdown file
+        await fs.writeFile(path.join(sourceDir, 'ignore-me.json'), '{}', 'utf8');
+    });
+
+    afterEach(async () => {
+        await fs.remove(tmpRoot);
+    });
+
+    it('syncs markdown workflows to the target directory and registers results', () => {
+        const resultFiles = [];
+        syncAntigravityWorkflows(tmpRoot, false, resultFiles, false);
+
+        const targetDir = path.join(tmpRoot, '.agent', 'workflows');
+        expect(fs.existsSync(targetDir)).toBe(true);
+        expect(fs.existsSync(path.join(targetDir, 'aios-mock-story.md'))).toBe(true);
+        expect(fs.existsSync(path.join(targetDir, 'ignore-me.json'))).toBe(false);
+
+        expect(resultFiles.length).toBe(1);
+        expect(resultFiles[0]).toEqual({
+            agent: 'Workflow',
+            type: 'workflow',
+            filename: 'aios-mock-story.md',
+            path: path.join(targetDir, 'aios-mock-story.md')
+        });
+    });
+
+    it('respects dry-run flag', () => {
+        const resultFiles = [];
+        syncAntigravityWorkflows(tmpRoot, true, resultFiles, false);
+
+        const targetDir = path.join(tmpRoot, '.agent', 'workflows');
+        expect(fs.existsSync(targetDir)).toBe(false); // Shouldn't have created the directory
+
+        expect(resultFiles.length).toBe(1);
+        expect(resultFiles[0]).toEqual({
+            agent: 'Workflow',
+            type: 'workflow',
+            filename: 'aios-mock-story.md',
+            path: undefined
+        });
+    });
+
+    it('reports errors in resultFiles when fs operations fail', () => {
+        const resultFiles = [];
+        // We pass a bad root that would cause fs.readdirSync to fail, but fs.existsSync passes if we mock it?
+        // Actually, to simulate failure, we can manually change permissions or mock `fs`.
+        // Let's just mock fs.readdirSync temporarily.
+        const originalReaddir = fs.readdirSync;
+        fs.readdirSync = () => { throw new Error('Mocked FS Error'); };
+
+        try {
+            syncAntigravityWorkflows(tmpRoot, false, resultFiles, false);
+        } finally {
+            fs.readdirSync = originalReaddir;
+        }
+
+        expect(resultFiles.length).toBe(1);
+        expect(resultFiles[0]).toEqual({
+            agent: 'Workflow',
+            type: 'workflow-error',
+            filename: null,
+            path: null,
+            error: 'Mocked FS Error'
+        });
+    });
+});
