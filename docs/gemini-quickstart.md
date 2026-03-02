@@ -99,7 +99,7 @@ gemini-aios
 | Recurso | Claude Code | Gemini CLI |
 |---------|-------------|------------|
 | Modelo | Claude Opus/Sonnet | Gemini 2.0 Flash |
-| Custo | $15+/mês | **Grátis** (60/min, 1000/dia) |
+| Custo | Pago | **Grátis** (com limites) |
 | Ativação | `/dev` | `/aios-dev` |
 | MCP | Nativo | Via extensão |
 | Multimodal | Limitado | **Completo** (imagens, vídeo) |
